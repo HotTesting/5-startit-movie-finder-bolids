@@ -29,7 +29,7 @@ describe("Movie card ", async function() {
     console.log(await movieCardRitingMinion.getText())
   });
   
-    fit('should open appropriate "movie details" page, after click on "name" field', async function(){
+    it('should open appropriate "movie details" page, after click on "name" field', async function(){
     await browser.get("/");  
     let cardNameMinionA = await element(by.css('.text-ellipsis a[href*="/movie/211672"]'))
     await cardNameMinionA.click();
