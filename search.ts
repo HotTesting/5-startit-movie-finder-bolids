@@ -22,11 +22,11 @@ describe('Search ', async function () {
        await search.sendKeys(name)
        await search.sendKeys(Key.ENTER)
        await browser.sleep(3000)
-       let movieNamesList = $$('movies > div:nth-child(3) .text-ellipsis > a[title]')
-       expect(await movieNamesList.getText()).toContain(name)
-       console.log(await movieNamesList.getText())
+       let movieNamesList = $$('movies > div:nth-child(3) .text-ellipsis > a[title]').getText()
+       await expect(movieNamesList).toContain(name)
+       console.log(movieNamesList)
     
-  }) // Failed: EPIPE write EPIPE
+  }) 
 
   it('result should be empty, after request for nonexistent movie', async function () {
    
