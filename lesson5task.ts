@@ -99,7 +99,7 @@ describe('Movie details', async function () {
     }) 
 
     it('should have "First Air Date" instead "Release Date"', async function () {
-        let releaseDate = $('div.caption p strong')
+        let releaseDate = $$('div.caption p strong').first()
         let popularHeader = $('nav.navbar-nav')
         let popularSeries = $$('app-popular-series div.col-sm-6.col-md-4.col-lg-3.col-xs-6')
 
