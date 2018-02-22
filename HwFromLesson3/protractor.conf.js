@@ -1,7 +1,8 @@
 require("ts-node").register();
 
 module.exports.config = {
-  specs: ['lesson5task.ts' /*'search.ts' ,'spec.ts',  'navigation.ts' , "movieCArd.ts" */],
+  //specs: ['HW from Lesson3/movieCard.ts' /*'search.ts' ,'spec.ts',  'navigation.ts' , "movieCArd.ts" */],
+  specs: ['/movieCard.ts', 'search.ts', 'navigation.ts'],
   baseUrl: "https://movies-finder.firebaseapp.com/",
   SELENIUM_PROMISE_MANAGER: false,
   capabilities: { 

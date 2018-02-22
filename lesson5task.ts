@@ -77,7 +77,7 @@ describe('Movie details', async function () {
             await reviewerNamesLinks.forEach(link => {
             expect(link).to.contain('https://www.themoviedb.org')
             })
-            console.log('Reviewer name is: ' + await (reviewerNames).getText())
+            //console.log('Reviewer name is: ' + (reviewerNames).getText())
     })
 })
 
