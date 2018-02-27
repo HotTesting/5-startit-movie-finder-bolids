@@ -1,7 +1,13 @@
 require("ts-node").register();
 
+let log4js =require('log4js')
+//log4js.setGlobalLogLevel(process.env.logLevel)
+log4js.setGlobalLogLevel(process.env.LOG_LEVEL || 'INfO');
+const logger = log4js.getLogger('SpecLogger')
+
 module.exports.config = {
-  specs: ['lesson5task.ts' /*'search.ts' ,'spec.ts',  'navigation.ts' , "movieCArd.ts" */],
+  //specs: ['lesson5task.ts', 'search.ts', 'navigation.ts', "movieCard.ts"],
+  specs: ['./specs/**/*.ts'],
   baseUrl: "https://movies-finder.firebaseapp.com/",
   SELENIUM_PROMISE_MANAGER: false,
   capabilities: { 
@@ -10,6 +16,7 @@ module.exports.config = {
   name: "Lida" // Just to identify your session between others on selenoid ui
 },
 onPrepare: async function () {
+   logger.info('On prepare started')
    // Global implicit wait setup
    await browser.manage().timeouts().implicitlyWait(1000)
 
