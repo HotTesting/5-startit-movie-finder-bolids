@@ -1,6 +1,6 @@
 import { browser, element, By, by, until, $, $$, Key, ExpectedConditions as EC, ElementArrayFinder } from 'protractor'
 
-import { HomePage } from './ObjectNavigation'
+import { HomePage } from './pageObjects/navigation'
 
 describe("Navigation ", async function() {
 

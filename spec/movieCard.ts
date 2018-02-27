@@ -1,8 +1,17 @@
-import { browser, $, $$, element, by } from "protractor";
+import { browser, element, By, by, until, $, $$, Key, ExpectedConditions as EC, ElementArrayFinder } from 'protractor'
+
+export class HomePage {
+
+      async open() {
+          await browser.get("/");
+      }
+}
 
 describe("Movie card ", async function() {
   it("should have name", async function() {
-    await browser.get("/");
+    let homePage = new HomePage()
+    await homePage.open()
+
     let cardNameFirst = await element.all(by.css(".text-ellipsis")).first();
     let cardNameDailFirst = await element(by.css('a[href*="/movie/19404"]')).getText();
     let cardNameLast = await $$(".text-ellipsis").last().getText();
@@ -19,7 +28,9 @@ describe("Movie card ", async function() {
   });
 
   it('should have "raiting" pointer', async function() {
-    await browser.get("/");
+    let homePage = new HomePage()
+    await homePage.open()
+
     let raitingPointerFirst = await $$("movie-card").first().$("p small");
     let movieCardRitingMinion = $$("movie-card").get(30).$("small");
     console.log(await raitingPointerFirst.getText());
@@ -27,7 +38,9 @@ describe("Movie card ", async function() {
   });
 
   it('should open appropriate "movie details" page, after click on "name" field', async function() {
-    await browser.get("/");
+    let homePage = new HomePage()
+    await homePage.open()
+    
     let cardNameMinionA = await element(by.css('.text-ellipsis a[href*="/movie/211672"]'));
     await cardNameMinionA.click();
     let openedCard = await $$(".col-xs-12.col-lg-10").first().$('a[href*="minionsmovie"]');
