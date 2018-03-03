@@ -6,8 +6,8 @@ log4js.setGlobalLogLevel(process.env.LOG_LEVEL || 'INfO');
 const logger = log4js.getLogger('SpecLogger')
 
 module.exports.config = {
-  //specs: ['lesson5task.ts', 'search.ts', 'navigation.ts', "movieCard.ts"],
-  specs: ['./specs/**/*.ts'],
+  specs: ['spec/*.ts'  ],
+  //specs: ['./spec/**/*.ts'],
   baseUrl: "https://movies-finder.firebaseapp.com/",
   SELENIUM_PROMISE_MANAGER: false,
   capabilities: { 
